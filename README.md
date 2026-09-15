@@ -19,28 +19,16 @@ Yêu cầu: Node.js 18+.
 
 ---
 
-## Deploy miễn phí trên Cloudflare Pages
+## Deploy miễn phí trên GitHub Pages
 
-### Cách 1 — Kết nối GitHub
+Site: **https://jakebrand24.github.io/x18/**
 
-1. Push repo lên GitHub (ví dụ `jakebrand24/x18`).
-2. Vào [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/) → **Create** → **Pages** → **Connect to Git**.
-3. Chọn repo, cấu hình:
-   - **Framework preset:** Vite
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-4. Deploy → nhận subdomain miễn phí `*.pages.dev`.
+- `vite.config.ts` dùng `base: '/x18/'`
+- Bản build tĩnh nằm trên nhánh `gh-pages`
+- Repo Settings → Pages → Branch: `gh-pages` / root (đã bật qua API nếu token đủ quyền)
 
-### Cách 2 — Deploy trực tiếp bằng Wrangler
+Cập nhật site: `npm run build` rồi đẩy lại nội dung `dist/` lên nhánh `gh-pages`.
 
-```bash
-npm run build
-npx wrangler pages deploy dist
-```
-
-`wrangler.toml` đã có sẵn (`pages_build_output_dir = "dist"`).
-
----
 
 ## Tính năng
 
